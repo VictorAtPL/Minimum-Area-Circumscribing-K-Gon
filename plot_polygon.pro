@@ -4,9 +4,10 @@ pro plot_polygon, continue=continue, edges=edges, points=points
 
 if (not keyword_set(continue)) then begin
 	if (n_elements(points) gt 1) then $
-		plot, [px,points[0:*:2]], [py,points[1:*:2]], /iso, /nodata $
+		plot, [px,points[0:*:2]], [py,points[1:*:2]], /isotropic, $
+			/ynozero, /nodata $
 	else $
-		plot, px, py, /isotropic, /nodata
+		plot, px, py, /isotropic, /ynozero, /nodata
 	plots, [px,px[0]], [py,py[0]], psym=-6, linestyle=1
 endif
 
