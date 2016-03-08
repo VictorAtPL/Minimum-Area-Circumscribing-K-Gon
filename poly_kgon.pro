@@ -280,4 +280,4 @@ endif
 return, reform(corners_min, 2, kgon)
 end
 
-vim: set filetype=idlang:
+vim: syntax=IDL
