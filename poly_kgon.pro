@@ -280,3 +280,5 @@ endif
 
 return, reform(corners_min, 2, kgon)
 end
+
+vim: syntax=idlang
