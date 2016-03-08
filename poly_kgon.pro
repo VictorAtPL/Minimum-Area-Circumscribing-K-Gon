@@ -1,4 +1,5 @@
-function poly_kgon, x, y, kgon=kgon, flush=flush, onesided=onesided, verbose=verbose, istart=istart
+function poly_kgon, x, y, kgon=kgon, flush=flush, onesided=onesided, $
+                                     verbose=verbose, istart=istart
 
 ; Purpose:
 ;   Determines the minimum-area convex k-gon (k-sided polygon) that
