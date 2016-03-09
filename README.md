@@ -13,3 +13,4 @@ IDL> print, result
       64.4083      58.4970
       43.5917      23.5030
 ```
+![kgon_example](https://cloud.githubusercontent.com/assets/9730969/13654712/edf53f0c-e6ad-11e5-935d-866e70c88b83.gif)
