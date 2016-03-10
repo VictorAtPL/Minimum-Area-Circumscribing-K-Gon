@@ -1,6 +1,6 @@
 ### POLY_KGON
 
-Computes the minimum-area convex k-gon (k-sided polygon) that circumscribes the given convex n-gon (x,y). Follows the method of Aggarwal et al, "Minimum area circumscribing Polygons", The Visual Computer (1985) 1:112-117
+Computes the minimum-area convex k-gon (k-sided polygon) that circumscribes the given convex n-gon. Follows the method of Aggarwal et al, "Minimum area circumscribing Polygons", The Visual Computer (1985) 1:112-117
 
 Example:
 ```IDL
