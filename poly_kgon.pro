@@ -212,19 +212,19 @@ if (area2_min ge 0.) then begin
 
 		p = line_intersect_midpt(pi1, pi2, pj2, pj1, pk, $
 					 slope=pslope, pol=pol)
-		if (n_elements(p) gt 1 and $
-			(pol[0] gt 1. and pol[1] gt 1.)) then begin
+		if (n_elements(p) gt 1) then begin
+			if (pol[0] gt 1. and pol[1] gt 1.) then begin
 
-			; The only sure way to check the solution is to see
-			; if the slope of the new edge is between the slopes
-			; of the two edges of P forming the vertex.
+			    ; The only sure way to check the solution is to
+			    ; see if the slope of the new edge is between the
+			    ; slopes of the two edges of P forming the vertex.
 
-			kv = (k mod np) + 1
-			vslope = vertex_slopes(kv)
-			if (pslope gt vslope[1]) then pslope = pslope - 180.
-			if (pslope lt vslope[0]) then pslope = pslope + 180.
+			    kv = (k mod np) + 1
+			    vslope = vertex_slopes(kv)
+			    if (pslope gt vslope[1]) then pslope = pslope - 180.
+			    if (pslope lt vslope[0]) then pslope = pslope + 180.
 
-			if (pslope ge vslope[0] and $
+			    if (pslope ge vslope[0] and $
 				pslope le vslope[1]) then begin
 
 				ni = (jj gt i)? (i - 2 - jj) + np : (i - 2 - jj)
@@ -237,6 +237,8 @@ if (area2_min ge 0.) then begin
 					print, 'balanced', k, area2_min
 
 				corners = [p1_min,p[*,1],p[*,0]]
+
+			    endif else area2_min = -1.
 
 			endif else area2_min = -1.
 
