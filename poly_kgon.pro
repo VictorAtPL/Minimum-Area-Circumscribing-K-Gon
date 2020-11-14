@@ -94,7 +94,9 @@ if (nedges eq 1) then begin
 endif else begin
   combigenresult = combigen(nedges,h)
 
-  if (ISA(combigenresult, /SCALAR)) and (combigenresult eq -1) then return, -1
+  if (ISA(combigenresult, /SCALAR)) then begin
+    if (combigenresult eq -1) then return, -1
+  endif
 
   cindex = combigenresult + (i+1)
 endelse
