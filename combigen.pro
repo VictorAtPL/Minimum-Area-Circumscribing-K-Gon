@@ -33,8 +33,14 @@
 ;-
 function combigen, n, k
 
-if n lt 2 then message, 'N must be greater than 1.'
-if k gt n then message, 'K must be less than or equal to N.'
+if n lt 2 then begin
+  print, 'N must be greater than 1.'
+  return, -1
+endif
+if k gt n then begin
+  print, 'K must be less than or equal to N.', -1
+  return, -1
+endif
 
 possible_prev = indgen(n)
 for vi=1L, k-1 do begin
@@ -54,7 +60,7 @@ for vi=1L, k-1 do begin
     result = [[result[good_ai[1,*],*]], [possible_next[good]]]
   endelse
 
-  possible_prev = possible_next[good]      
+  possible_prev = possible_next[good]
 endfor
 if (k eq 1) then result = possible_prev
 

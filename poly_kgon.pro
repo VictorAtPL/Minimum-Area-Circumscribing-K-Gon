@@ -88,7 +88,18 @@ if (keyword_set(verbose)) then begin
 endif
 
 nedges = jj - 1 - i
-cindex = (nedges eq 1)? (i+1) : combigen(nedges,h) + (i+1)
+
+if (nedges eq 1) then begin
+  cindex = (i+1)
+endif else begin
+  combigenresult = combigen(nedges,h)
+
+  if (combigenresult eq -1) then return, -1
+
+  cindex = combigenresult + (i+1)
+endelse
+
+
 ncoms = n_elements(cindex)/h
 
 cindex = ((cindex-1) mod np) + 1
