@@ -287,6 +287,8 @@ if (keyword_set(flush) or keyword_set(onesided)) then read, s
 endfor
 endfor
 
+if (ISA(corners_min) eq 0) then return, -1
+
 if (keyword_set(verbose)) then begin
 	print
 	print, 'final', i_min, j_min, total_min
